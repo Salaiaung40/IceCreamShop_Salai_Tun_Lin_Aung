@@ -9,31 +9,39 @@ import be.intecbrussel.sellers.Stock;
 
 public class IceCreamAppV2 {
     public static void main(String[] args) {
-        PriceList priceList2 = new PriceList(2, 5, 8);
+        PriceList priceList2 = new PriceList(2, 4, 8);
 
-        Stock stock = new Stock(1, 8, 2, 1);
+        Stock stock = new Stock(2, 8, 5, 1);
 
         IceCreamCar iceCreamCar = new IceCreamCar(priceList2, stock);
 
         Eatable[] eatCar = {
-                iceCreamCar.orderCone(new Cone.Flavor[]{ Cone.Flavor.MOKKA}),
+                iceCreamCar.orderCone(new Cone.Flavor[]{Cone.Flavor.MOKKA}),
                 iceCreamCar.orderCone(new Cone.Flavor[]{Cone.Flavor.STRACIATELLA}),
-                iceCreamCar.orderMagnum(Magnum.MagnumType.ROMANTICSTRAWBERRIES),
+                iceCreamCar.orderCone(new Cone.Flavor[]{Cone.Flavor.STRACIATELLA}),
+
+                iceCreamCar.orderIceRocket(),
+                iceCreamCar.orderIceRocket(),
+                iceCreamCar.orderIceRocket(),
+
                 iceCreamCar.orderMagnum(Magnum.MagnumType.ALPINENUTS),
-                iceCreamCar.orderIceRocket()
+                iceCreamCar.orderMagnum(Magnum.MagnumType.ROMANTICSTRAWBERRIES),
+
         };
 
         for (int i = 0; i < eatCar.length; i++) {
+
             try {
                 eatCar[i].eat();
-            } catch (Exception e) {
-//                e.IceCreamCar.NoMoreIceCreamException;
-                System.out.println("No More Item To sell!!");
-//
+
+
+            } catch (IceCreamCar.NoMoreIceCreamException message) {
+                message.getMessage();
             }
 
         }
-        System.out.println("Total Profit: " + "$ "+iceCreamCar.getProfit());
+        System.out.println("Total Price: " + "$" + iceCreamCar.getTotalPrice());
+        System.out.println("Total Profit: " + "$ " + iceCreamCar.getProfit());
     }
 
 }

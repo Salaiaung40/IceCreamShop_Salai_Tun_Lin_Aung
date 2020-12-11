@@ -45,9 +45,13 @@ public class Stock {
 
     //Create constructor
     public Stock() {
+        this.iceRockets = 1;
+        this.cones = 1;
+        this.balls = 1;
+        this.magni = 1;
     }
 
-    public Stock(int iceRockets, int cones, int balls, int magni) {
+    public Stock( int cones, int balls,int iceRockets, int magni) {
         this.iceRockets = iceRockets;
         this.cones = cones;
         this.balls = balls;

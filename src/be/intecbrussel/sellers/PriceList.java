@@ -1,19 +1,20 @@
 package be.intecbrussel.sellers;
 
-
 import be.intecbrussel.eatables.Magnum;
 
-import java.util.Scanner;
 
 public class PriceList {
-    // Create functions Instance Variables ballPrice double, rocketPrice double, magnumStandardPrice double
+    // Create functions Instance Variables
     private double ballPrice;
     private double rocketPrice;
     private double magnumStandardPrice;
 
 
-    //Create Constructor methods
+    //Constructor
     public PriceList() {
+        this.ballPrice = 1;
+        this.rocketPrice = 1;
+        this.magnumStandardPrice = 2;
 
     }
 
@@ -55,13 +56,9 @@ public class PriceList {
         return magnumStandardPrice;
     }
 
-
-//    Magnum.MagnumType magnum;
-
-    double magnumPrice;
-
+    // Calculation for the price
     public double getMagnumPrice(Magnum.MagnumType name) {
-        // Calculation for the price
+        double magnumPrice = 0;
         switch (name) {
             case MILKCHOCOLATE:
                 magnumPrice = magnumStandardPrice;
@@ -84,18 +81,6 @@ public class PriceList {
         return magnumPrice;
     }
 
-/*
-    public void eachPriceList() {
-//        Scanner key = new Scanner(System.in);
-//        System.out.print("Please enter your words: ");
-//        Magnum.MagnumType inputWords = Magnum.MagnumType.valueOf(key.next());
-//        System.out.println("Your Order  cost - " + "$" + getMagnumPrice(inputWords));
-
-//        System.out.println("Your Order  cost - " + "$" + getBallPrice());
-//        System.out.println("Your Order  cost - " + "$" + getRocketPrice());
-    }
-
- */
 
 }
 
